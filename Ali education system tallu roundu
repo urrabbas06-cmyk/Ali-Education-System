@@ -1,0 +1,692 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#123b75">
+
+<title>Ali Education System | Tallu, Roundu</title>
+
+<style>
+:root {
+    --blue: #123b75;
+    --light-blue: #eaf3ff;
+    --white: #ffffff;
+    --text: #24334b;
+    --gold: #ffc857;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, "Noto Sans Arabic", sans-serif;
+    color: var(--text);
+    background: #f7faff;
+    line-height: 1.8;
+}
+
+a {
+    text-decoration: none;
+}
+
+header {
+    background: var(--white);
+    box-shadow: 0 3px 15px #123b7515;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.navbar {
+    max-width: 1200px;
+    margin: auto;
+    padding: 14px 5%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 18px;
+}
+
+.logo {
+    color: var(--blue);
+    font-size: 21px;
+    font-weight: 800;
+    line-height: 1.3;
+}
+
+.logo small {
+    display: block;
+    font-size: 12px;
+    font-weight: 500;
+    color: #657b9b;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 18px;
+}
+
+nav a {
+    color: var(--blue);
+    font-size: 14px;
+    font-weight: bold;
+}
+
+nav a:hover {
+    color: #2476d4;
+}
+
+.lang-btn, .primary-btn {
+    background: var(--blue);
+    color: white;
+    border: none;
+    padding: 10px 17px;
+    border-radius: 7px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.hero {
+    background: linear-gradient(120deg, #123b75, #287bd0);
+    color: white;
+    padding: 85px 6%;
+    text-align: center;
+    overflow: hidden;
+}
+
+.hero-content {
+    max-width: 850px;
+    margin: auto;
+}
+
+.school-badge {
+    display: inline-block;
+    background: #ffffff20;
+    border: 1px solid #ffffff50;
+    border-radius: 30px;
+    padding: 5px 16px;
+    margin-bottom: 20px;
+}
+
+.hero h1 {
+    font-size: clamp(32px, 5vw, 56px);
+    line-height: 1.25;
+    margin-bottom: 16px;
+}
+
+.hero p {
+    max-width: 690px;
+    margin: 0 auto 25px;
+    color: #e7f1ff;
+    font-size: 17px;
+}
+
+.hero .primary-btn {
+    display: inline-block;
+    background: var(--gold);
+    color: #123b75;
+    padding: 13px 25px;
+}
+
+.location {
+    margin-top: 25px;
+    font-size: 14px;
+    color: #e7f1ff;
+}
+
+section {
+    padding: 70px 6%;
+    scroll-margin-top: 90px;
+}
+
+.container {
+    max-width: 1100px;
+    margin: auto;
+}
+
+.section-heading {
+    text-align: center;
+    margin-bottom: 35px;
+}
+
+.section-heading h2 {
+    color: var(--blue);
+    font-size: clamp(26px, 4vw, 36px);
+    margin-bottom: 8px;
+}
+
+.section-heading p {
+    color: #687994;
+}
+
+.intro-box {
+    background: white;
+    border-radius: 15px;
+    padding: 35px;
+    box-shadow: 0 8px 28px #123b750b;
+    border-left: 5px solid var(--blue);
+}
+
+[dir="rtl"] .intro-box {
+    border-left: none;
+    border-right: 5px solid var(--blue);
+}
+
+.intro-box p {
+    margin-bottom: 15px;
+}
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 22px;
+}
+
+.card {
+    background: white;
+    padding: 28px 22px;
+    border-radius: 13px;
+    text-align: center;
+    border: 1px solid #e3ecf8;
+    transition: transform .2s, box-shadow .2s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 28px #123b7515;
+}
+
+.icon {
+    width: 65px;
+    height: 65px;
+    display: grid;
+    place-items: center;
+    margin: 0 auto 14px;
+    background: var(--light-blue);
+    border-radius: 50%;
+    font-size: 30px;
+}
+
+.card h3 {
+    color: var(--blue);
+    margin-bottom: 10px;
+    font-size: 19px;
+}
+
+.features-section {
+    background: var(--light-blue);
+}
+
+.mission {
+    background: var(--blue);
+    color: white;
+    text-align: center;
+}
+
+.mission h2 {
+    color: var(--gold);
+    font-size: 30px;
+    margin-bottom: 15px;
+}
+
+.mission p {
+    max-width: 760px;
+    margin: auto;
+}
+
+.admission-box {
+    max-width: 760px;
+    margin: auto;
+    background: white;
+    border: 1px solid #e0eaf8;
+    border-radius: 15px;
+    padding: 32px;
+    text-align: center;
+}
+
+.admission-box p {
+    margin: 10px 0;
+}
+
+.contact-details {
+    margin-top: 22px;
+    padding: 18px;
+    background: var(--light-blue);
+    border-radius: 10px;
+}
+
+footer {
+    background: #0b2448;
+    color: white;
+    padding: 27px 6%;
+    text-align: center;
+}
+
+footer p {
+    font-size: 14px;
+}
+
+footer .tagline {
+    color: #bcd6fa;
+    margin-top: 5px;
+}
+
+[dir="rtl"] {
+    text-align: right;
+    font-family: Arial, "Noto Naskh Arabic", sans-serif;
+}
+
+@media (max-width: 850px) {
+    .navbar {
+        flex-wrap: wrap;
+        justify-content: center;
+        text-align: center;
+    }
+
+    nav {
+        justify-content: center;
+        gap: 12px;
+    }
+
+    .cards {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 540px) {
+    .cards {
+        grid-template-columns: 1fr;
+    }
+
+    section {
+        padding: 48px 5%;
+    }
+
+    .hero {
+        padding: 65px 5%;
+    }
+
+    .intro-box, .admission-box {
+        padding: 22px;
+    }
+
+    nav a {
+        font-size: 13px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- HEADER -->
+<header>
+    <div class="navbar">
+        <a class="logo" href="#home">
+            🎓 Ali Education System
+            <small>Tallu, Roundu, Gilgit-Baltistan</small>
+        </a>
+
+        <nav>
+            <a href="#home" data-en="Home" data-ur="ہوم">Home</a>
+            <a href="#introduction"
+               data-en="Introduction" data-ur="تعارف">Introduction</a>
+            <a href="#features"
+               data-en="Features" data-ur="خصوصیات">Features</a>
+            <a href="#facilities"
+               data-en="Facilities" data-ur="سہولیات">Facilities</a>
+            <a href="#admissions"
+               data-en="Admissions" data-ur="داخلے">Admissions</a>
+        </nav>
+
+        <button class="lang-btn" id="languageButton"
+                onclick="toggleLanguage()">اردو</button>
+    </div>
+</header>
+
+<!-- HOME -->
+<main>
+<section class="hero" id="home">
+    <div class="hero-content">
+        <div class="school-badge"
+             data-en="Welcome to Our School"
+             data-ur="ہمارے اسکول میں خوش آمدید">
+            Welcome to Our School
+        </div>
+
+        <h1 data-en="Ali Education System"
+            data-ur="علی ایجوکیشن سسٹم">
+            Ali Education System
+        </h1>
+
+        <p data-en="A journey towards knowledge, good character and a brighter future for every student."
+           data-ur="علم، اچھے کردار اور ہر طالب علم کے روشن مستقبل کی جانب ایک سفر۔">
+            A journey towards knowledge, good character and a
+            brighter future for every student.
+        </p>
+
+        <a href="#introduction" class="primary-btn"
+           data-en="Discover Our School"
+           data-ur="ہمارے اسکول کے بارے میں جانیں">
+            Discover Our School
+        </a>
+
+        <div class="location"
+             data-en="📍 Tallu, Roundu, Gilgit-Baltistan, Pakistan"
+             data-ur="📍 ٹلو، روندو، گلگت بلتستان، پاکستان">
+            📍 Tallu, Roundu, Gilgit-Baltistan, Pakistan
+        </div>
+    </div>
+</section>
+
+<!-- INTRODUCTION FIRST -->
+<section id="introduction">
+    <div class="container">
+        <div class="section-heading">
+            <h2 data-en="School Introduction"
+                data-ur="اسکول کا تعارف">School Introduction</h2>
+
+            <p data-en="Get to know Ali Education System"
+               data-ur="علی ایجوکیشن سسٹم کے بارے میں جانیں">
+                Get to know Ali Education System
+            </p>
+        </div>
+
+        <div class="intro-box">
+            <p data-en="Welcome to Ali Education System, located in Tallu, Roundu, Gilgit-Baltistan. Our aim is to support students in their educational journey and help them build a strong foundation for the future."
+               data-ur="علی ایجوکیشن سسٹم، ٹلو، روندو، گلگت بلتستان میں خوش آمدید۔ ہمارا مقصد طلبہ کے تعلیمی سفر میں ان کی رہنمائی کرنا اور ان کے روشن مستقبل کے لیے مضبوط بنیاد فراہم کرنا ہے۔">
+                Welcome to Ali Education System, located in Tallu,
+                Roundu, Gilgit-Baltistan. Our aim is to support
+                students in their educational journey and help them
+                build a strong foundation for the future.
+            </p>
+
+            <p data-en="We believe education is not only about textbooks and examinations. It also means developing confidence, discipline, respect, creativity and responsibility."
+               data-ur="ہمارے نزدیک تعلیم صرف کتابوں اور امتحانات تک محدود نہیں۔ تعلیم اعتماد، نظم و ضبط، احترام، تخلیقی صلاحیت اور ذمہ داری پیدا کرنے کا نام بھی ہے۔">
+                We believe education is not only about textbooks and
+                examinations. It also means developing confidence,
+                discipline, respect, creativity and responsibility.
+            </p>
+
+            <p data-en="Our school serves the middle-school level. We aim to create a positive learning environment where students can ask questions, discover their abilities and work towards their goals."
+               data-ur="ہمارا اسکول مڈل سطح کے طلبہ کی تعلیم کے لیے ہے۔ ہمارا مقصد ایسا مثبت تعلیمی ماحول فراہم کرنا ہے جہاں طلبہ سوالات پوچھ سکیں، اپنی صلاحیتیں پہچانیں اور اپنے مقاصد کے لیے محنت کریں۔">
+                Our school serves the middle-school level. We aim
+                to create a positive learning environment where
+                students can ask questions, discover their abilities
+                and work towards their goals.
+            </p>
+        </div>
+    </div>
+</section>
+
+<!-- SCHOOL FEATURES -->
+<section class="features-section" id="features">
+    <div class="container">
+        <div class="section-heading">
+            <h2 data-en="Our School's Special Features"
+                data-ur="ہمارے اسکول کی خصوصیات">
+                Our School's Special Features
+            </h2>
+
+            <p data-en="Learning with purpose and building character"
+               data-ur="مقصد کے ساتھ تعلیم اور کردار سازی">
+                Learning with purpose and building character
+            </p>
+        </div>
+
+        <div class="cards">
+            <article class="card">
+                <div class="icon">📚</div>
+                <h3 data-en="Quality Education"
+                    data-ur="معیاری تعلیم">Quality Education</h3>
+                <p data-en="Encouraging understanding, curiosity and a love of learning."
+                   data-ur="سمجھ بوجھ، جستجو اور سیکھنے کا شوق پیدا کرنا۔">
+                    Encouraging understanding, curiosity and a
+                    love of learning.
+                </p>
+            </article>
+
+            <article class="card">
+                <div class="icon">👩‍🏫</div>
+                <h3 data-en="Teacher Guidance"
+                    data-ur="اساتذہ کی رہنمائی">Teacher Guidance</h3>
+                <p data-en="Supporting students through guidance, practice and feedback."
+                   data-ur="رہنمائی، مشق اور اصلاح کے ذریعے طلبہ کی مدد کرنا۔">
+                    Supporting students through guidance, practice
+                    and feedback.
+                </p>
+            </article>
+
+            <article class="card">
+                <div class="icon">🌟</div>
+                <h3 data-en="Character Building"
+                    data-ur="کردار سازی">Character Building</h3>
+                <p data-en="Promoting honesty, respect, discipline and kindness."
+                   data-ur="ایمانداری، احترام، نظم و ضبط اور حسنِ اخلاق کو فروغ دینا۔">
+                    Promoting honesty, respect, discipline and kindness.
+                </p>
+            </article>
+
+            <article class="card">
+                <div class="icon">🧠</div>
+                <h3 data-en="Creative Thinking"
+                    data-ur="تخلیقی سوچ">Creative Thinking</h3>
+                <p data-en="Helping learners develop problem-solving and thinking skills."
+                   data-ur="طلبہ میں مسائل حل کرنے اور سوچنے کی صلاحیت پیدا کرنا۔">
+                    Helping learners develop problem-solving
+                    and thinking skills.
+                </p>
+            </article>
+
+            <article class="card">
+                <div class="icon">🤝</div>
+                <h3 data-en="Respect & Teamwork"
+                    data-ur="احترام اور تعاون">Respect & Teamwork</h3>
+                <p data-en="Encouraging cooperation, friendship and mutual respect."
+                   data-ur="باہمی تعاون، دوستی اور ایک دوسرے کے احترام کی حوصلہ افزائی کرنا۔">
+                    Encouraging cooperation, friendship and
+                    mutual respect.
+                </p>
+            </article>
+
+            <article class="card">
+                <div class="icon">🎯</div>
+                <h3 data-en="Student Development"
+                    data-ur="طلبہ کی ترقی">Student Development</h3>
+                <p data-en="Inspiring students to set goals and make steady progress."
+                   data-ur="طلبہ کو اہداف مقرر کرنے اور مسلسل ترقی کی ترغیب دینا۔">
+                    Inspiring students to set goals and make
+                    steady progress.
+                </p>
+            </article>
+        </div>
+    </div>
+</section>
+
+<!-- FACILITIES -->
+<section id="facilities">
+    <div class="container">
+        <div class="section-heading">
+            <h2 data-en="School Facilities"
+                data-ur="اسکول کی سہولیات">School Facilities</h2>
+
+            <p data-en="A supportive environment for learning"
+               data-ur="تعلیم کے لیے ایک معاون ماحول">
+                A supportive environment for learning
+            </p>
+        </div>
+
+        <div class="cards">
+            <article class="card">
+                <div class="icon">🏫</div>
+                <h3 data-en="Learning Environment"
+                    data-ur="تعلیمی ماحول">Learning Environment</h3>
+                <p data-en="A positive atmosphere that encourages students to learn."
+                   data-ur="ایسا مثبت ماحول جو طلبہ کو سیکھنے کی ترغیب دے۔">
+                    A positive atmosphere that encourages
+                    students to learn.
+                </p>
+            </article>
+
+            <article class="card">
+                <div class="icon">📝</div>
+                <h3 data-en="Classroom Learning"
+                    data-ur="کلاس روم میں تعلیم">Classroom Learning</h3>
+                <p data-en="Lessons, practice and activities that support learning."
+                   data-ur="تعلیم میں مدد دینے والے اسباق، مشقیں اور سرگرمیاں۔">
+                    Lessons, practice and activities that
+                    support learning.
+                </p>
+            </article>
+
+            <article class="card">
+                <div class="icon">⚽</div>
+                <h3 data-en="Activities & Sports"
+                    data-ur="سرگرمیاں اور کھیل">Activities & Sports</h3>
+                <p data-en="Opportunities for physical activity and teamwork, where available."
+                   data-ur="دستیابی کے مطابق جسمانی سرگرمیوں اور ٹیم ورک کے مواقع۔">
+                    Opportunities for physical activity and
+                    teamwork, where available.
+                </p>
+            </article>
+        </div>
+    </div>
+</section>
+
+<!-- MISSION -->
+<section class="mission">
+    <div class="container">
+        <h2 data-en="Our Mission"
+            data-ur="ہمارا مشن">Our Mission</h2>
+
+        <p data-en="To encourage students to gain knowledge, develop strong values and become confident, responsible and successful members of society."
+           data-ur="طلبہ کو علم حاصل کرنے، مضبوط اقدار اپنانے اور معاشرے کے پُراعتماد، ذمہ دار اور کامیاب افراد بننے کی ترغیب دینا۔">
+            To encourage students to gain knowledge, develop
+            strong values and become confident, responsible
+            and successful members of society.
+        </p>
+    </div>
+</section>
+
+<!-- ADMISSIONS & CONTACT -->
+<section id="admissions">
+    <div class="container">
+        <div class="section-heading">
+            <h2 data-en="Admissions"
+                data-ur="داخلے">Admissions</h2>
+
+            <p data-en="Take the next step in your child's education."
+               data-ur="اپنے بچے کی تعلیم کے اگلے مرحلے کی جانب قدم بڑھائیں۔">
+                Take the next step in your child's education.
+            </p>
+        </div>
+
+        <div class="admission-box">
+            <h3 data-en="Join Ali Education System"
+                data-ur="علی ایجوکیشن سسٹم میں داخلہ لیں">
+                Join Ali Education System
+            </h3>
+
+            <p data-en="For admission information, class availability and school visits, please contact the school administration."
+               data-ur="داخلے، جماعتوں کی دستیابی اور اسکول کے دورے کی معلومات کے لیے اسکول انتظامیہ سے رابطہ کریں۔">
+                For admission information, class availability and
+                school visits, please contact the school administration.
+            </p>
+
+            <div class="contact-details">
+                <p>
+                    <strong data-en="School:"
+                            data-ur="اسکول:">School:</strong>
+                    Ali Education System
+                </p>
+
+                <p>
+                    <strong data-en="Location:"
+                            data-ur="مقام:">Location:</strong>
+                    <span data-en="Tallu, Roundu, Gilgit-Baltistan"
+                          data-ur="ٹلو، روندو، گلگت بلتستان">
+                        Tallu, Roundu, Gilgit-Baltistan
+                    </span>
+                </p>
+
+                <p>
+                    <strong data-en="Phone:"
+                            data-ur="فون نمبر:">Phone:</strong>
+                    <span data-en="Please add the school's phone number"
+                          data-ur="براہِ کرم اسکول کا فون نمبر درج کریں">
+                        Please add the school's phone number
+                    </span>
+                </p>
+
+                <p>
+                    <strong data-en="Office Hours:"
+                            data-ur="دفتری اوقات:">Office Hours:</strong>
+                    <span data-en="Please confirm with the school"
+                          data-ur="اسکول سے تصدیق کریں">
+                        Please confirm with the school
+                    </span>
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+</main>
+
+<!-- FOOTER -->
+<footer>
+    <p>
+        &copy; <span id="year"></span>
+        Ali Education System
+    </p>
+
+    <p class="tagline"
+       data-en="Education today, a brighter tomorrow."
+       data-ur="آج کی تعلیم، کل کا روشن مستقبل۔">
+        Education today, a brighter tomorrow.
+    </p>
+
+    <p>Tallu, Roundu, Gilgit-Baltistan</p>
+</footer>
+
+<script>
+let currentLanguage = "en";
+
+function toggleLanguage() {
+    currentLanguage =
+        currentLanguage === "en" ? "ur" : "en";
+
+    document.querySelectorAll("[data-en][data-ur]")
+        .forEach(function (element) {
+            element.textContent =
+                element.getAttribute("data-" + currentLanguage);
+
+            if (currentLanguage === "ur") {
+                element.setAttribute("dir", "rtl");
+            } else {
+                element.setAttribute("dir", "ltr");
+            }
+        });
+
+    document.documentElement.lang = currentLanguage;
+    document.documentElement.dir =
+        currentLanguage === "ur" ? "rtl" : "ltr";
+
+    document.getElementById("languageButton").textContent =
+        currentLanguage === "en" ? "اردو" : "English";
+}
+
+document.getElementById("year").textContent =
+    new Date().getFullYear();
+</script>
+
+</body>
+</html>
